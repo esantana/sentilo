@@ -133,12 +133,12 @@ public class FrozenRepositoryImplTest {
 
     verify(operations).rangeByScore(any(String.class), any(Double.class), any(Double.class));
     Assert.assertTrue(alerts.size() == 2);
-    Assert.assertEquals(alerts.get(0).getId(), alertId1);
-    Assert.assertEquals(alerts.get(0).getProviderId(), providerId);
-    Assert.assertEquals(alerts.get(0).getSensorId(), sensorId);
-    Assert.assertEquals(alerts.get(1).getId(), alertId2);
+    Assert.assertEquals(alerts.get(1).getId(), alertId1);
     Assert.assertEquals(alerts.get(1).getProviderId(), providerId);
     Assert.assertEquals(alerts.get(1).getSensorId(), sensorId);
+    Assert.assertEquals(alerts.get(0).getId(), alertId2);
+    Assert.assertEquals(alerts.get(0).getProviderId(), providerId);
+    Assert.assertEquals(alerts.get(0).getSensorId(), sensorId);
   }
 
   @Test

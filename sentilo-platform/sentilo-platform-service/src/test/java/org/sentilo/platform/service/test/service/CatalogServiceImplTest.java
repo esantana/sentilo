@@ -44,7 +44,6 @@ import org.sentilo.common.rest.RESTClient;
 import org.sentilo.common.rest.RequestParameters;
 import org.sentilo.platform.common.exception.CatalogAccessException;
 import org.sentilo.platform.service.impl.CatalogServiceImpl;
-import org.springframework.web.client.RestClientException;
 
 public class CatalogServiceImplTest {
 
@@ -129,7 +128,8 @@ public class CatalogServiceImplTest {
 
   @Test(expected = CatalogAccessException.class)
   public void badRequestGetAlertsOwners() {
-    doThrow(RestClientException.class).when(restClient).get(any(String.class));
+    //doThrow(RestClientException.class).when(restClient).get(any(String.class));
+    doThrow(CatalogAccessException.class).when(restClient).get(any(String.class));
 
     service.getAlertsOwners();
   }
@@ -145,7 +145,8 @@ public class CatalogServiceImplTest {
 
   @Test(expected = CatalogAccessException.class)
   public void badRequestGetAuthorizedAlerts() {
-    doThrow(RestClientException.class).when(restClient).get(any(String.class), any(RequestParameters.class));
+    //doThrow(RestClientException.class).when(restClient).get(any(String.class), any(RequestParameters.class));
+    doThrow(CatalogAccessException.class).when(restClient).get(any(String.class), any(RequestParameters.class));
 
     service.getAuthorizedAlerts(alertMessage);
   }
@@ -161,7 +162,8 @@ public class CatalogServiceImplTest {
 
   @Test(expected = CatalogAccessException.class)
   public void badRequestInsertAlerts() {
-    doThrow(RestClientException.class).when(restClient).post(any(String.class), any(String.class));
+    //doThrow(RestClientException.class).when(restClient).post(any(String.class), any(String.class));
+    doThrow(CatalogAccessException.class).when(restClient).post(any(String.class), any(String.class));
 
     service.insertAlerts(alertMessage);
   }
@@ -177,7 +179,8 @@ public class CatalogServiceImplTest {
 
   @Test(expected = CatalogAccessException.class)
   public void badRequestUpdateAlerts() {
-    doThrow(RestClientException.class).when(restClient).put(any(String.class), any(String.class));
+    //doThrow(RestClientException.class).when(restClient).put(any(String.class), any(String.class));
+    doThrow(CatalogAccessException.class).when(restClient).put(any(String.class), any(String.class));
 
     service.updateAlerts(alertMessage);
   }
@@ -193,7 +196,8 @@ public class CatalogServiceImplTest {
 
   @Test(expected = CatalogAccessException.class)
   public void badRequestDeleteAlerts() {
-    doThrow(RestClientException.class).when(restClient).put(any(String.class), any(String.class));
+    //doThrow(RestClientException.class).when(restClient).put(any(String.class), any(String.class));
+    doThrow(CatalogAccessException.class).when(restClient).put(any(String.class), any(String.class));
 
     service.deleteAlerts(alertMessage);
   }

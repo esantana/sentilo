@@ -15,7 +15,7 @@
 	</http>
 
 	<beans:bean id="basicAuthEntryPoint" class="org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint"
-		p:realmName="REST Realm" />
+		p:realmName="REST Realm HERE" />
 
 	<beans:bean id="basicAuthenticationFilter" class="org.springframework.security.web.authentication.www.BasicAuthenticationFilter"
 		p:authenticationManager-ref="authenticationManager" p:authenticationEntryPoint-ref="basicAuthEntryPoint" />

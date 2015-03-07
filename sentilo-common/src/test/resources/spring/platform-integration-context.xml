@@ -6,7 +6,7 @@
   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<bean id="restClientImpl" class="org.sentilo.common.rest.impl.RESTClientImpl" p:host="http://127.0.0.1:8081/"
+	<bean id="restClientImpl" class="org.sentilo.common.rest.impl.RESTClientImpl" p:host="http://sentiloaws:8081/"
 		p:interceptors-ref="interceptors" />
 
 	<util:list id="interceptors">
